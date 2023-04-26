@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--include jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="Jcir.js"></script>
+    <script>
+
+    
+    $(document).ready(function(){
+
+          
+
+
+
+        //llmar a la clase
+        
+        
+        var circleProgress = new CircleProgress("#ContenteProgress");
+
+        circleProgress.setAngle(-90);
+
+        circleProgress.setColors("rgba(255,0,0,1)","rgba(0,0,0,0)");
+
+        circleProgress.setTimeTween(10);
+
+        circleProgress.tween(50,10);
+
+        circleProgress.setShadowColor("rgba(255,0,0,.5)");
+
+        circleProgress.setShadowBlur(10);
+
+
+        setTimeout(()=>{
+            circleProgress.tween(100,10);
+        },1000);
+
+        setTimeout(()=>{
+            circleProgress.tween(10,10);
+        },2000);
+
+        setTimeout(()=>{
+            circleProgress.tween(50,10);
+        },3000);
+
+
+        //contentProgres2
+
+        var circleProgress2 = new CircleProgress("#contentProgres2");
+
+        circleProgress2.setAngle(0);
+
+        circleProgress2.setColors("rgba(255,0,0,1)","rgba(150,0,255,1)");
+
+        circleProgress2.setTimeTween(10);
+
+        circleProgress2.tween(50,10);
+
+        circleProgress2.setShadowColor("rgba(255,0,120,.5)");
+
+        circleProgress2.setShadowBlur(100);
+
+        
+        setTimeout(()=>{
+            circleProgress2.tween(25,10);
+        },1000);
+
+        setTimeout(()=>{
+            circleProgress2.tween(10,10);
+        },2000);
+
+        setTimeout(()=>{
+            circleProgress2.tween(80,10);
+        },3000);
+        
+
+            
+
+    });
+
+
+
+
+    </script>
+
+    <style>
+        body{
+            margin: 0px;
+        }
+        #contenido{
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #can{
+            
+            
+        }
+        .ContenteProgress{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="contenido">
+
+
+        <div id="ContenteProgress" class="ContenteProgress">
+
+            
+       
+        </div>
+
+
+        <div id="contentProgres2" class="ContenteProgress">
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
