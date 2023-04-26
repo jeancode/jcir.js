@@ -1,6 +1,8 @@
 # jprogress.js
 Genera un dialogo de progreso javascript
 
+
+
 ## Documentación del código
 ### Descripción
 Este código instancia un objeto de la clase CircleProgress, y configura ciertos atributos para generar una animación en forma de círculo con un efecto de progreso.
@@ -43,3 +45,5 @@ circleProgress.tween(50,10);
 circleProgress.setShadowColor("rgba(255,0,0,.5)");
 circleProgress.setShadowBlur(10);
 ```
+
+![](./Captura.PNG)
