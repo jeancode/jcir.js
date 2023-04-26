@@ -252,5 +252,24 @@
         setTimeTween(time){
             this.timeTween = time;
         }
+        
+        ///
+        setColorLabel(color){
+
+            //this.label.style.color = color
+
+            this.label.style.color =color;
+
+        }
+
+        setColorLabelShadow(color){
+
+            
+            //this.label.style.textShadow =  "0px 0px 10px " + color;
+            $(this.label).css({
+                "textShadow":"0px 0px 30px "+color
+            });
+
+        }
     
 };
