@@ -1,4 +1,4 @@
-# jcir.js
+# jprogress.js
 Genera un dialogo de progreso javascript
 
 ## Documentación del código
