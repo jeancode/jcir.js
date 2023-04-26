@@ -44,6 +44,14 @@ circleProgress.tween(50,10);
 // Configura la sombra del círculo de la animación
 circleProgress.setShadowColor("rgba(255,0,0,.5)");
 circleProgress.setShadowBlur(10);
+
+//color de texto     
+progress2.setColorLabel("rgba(255,255,255,1)");
+
+// sombra de texto
+progress2.setColorLabelShadow("rgba(0,150,255,1)");
+
+
 ```
 
 ![](./Captura.PNG)
