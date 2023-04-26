@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jprogress</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="./jprogress.js"></script>
     <style>
 
@@ -21,13 +22,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
 
         }
-        #ProgressBar{
-            width: 300px;
-            height: 300px;
-            border:1px solid white;
+        #ProgressBar1{
+            min-width: 300px;
+            min-height: 300px;
+            display: flex;
+        }
 
+        #ProgressBar2{
+
+            display: flex;
+            justify-content: center;
+            align-content: center;
         }
 
     </style>
@@ -37,8 +45,9 @@
 
     <div id="Contenido">
 
+        <div id="ProgressBar1"></div>
 
-        <div id="ProgressBar"></div>
+        <div id="ProgressBar2"></div>
 
 
     </div>
@@ -47,44 +56,53 @@
 
 
 
-        var progress = new jprogress("#ProgressBar");
+        var progress = new jprogress("#ProgressBar1","%");
 
 
 
         // timepo de animacion
-        progress.setTimeTween(1);
+        progress.setTimeTween(30);
 
         // angulo de incio
         progress.setAngle(180);
 
         // agrega color
-        progress.setColors("rgba(0,255,0,1)","rgba(0,0,255,1)");
+        progress.setColors("rgba(255,0,0,1)","rgba(150,10,150,1)");
 
-        progress.setShadowColor("rgba(0,200,100,1)");
+        progress.setShadowColor("rgba(255,0,100,1)");
 
         progress.setShadowBlur(100);
     
         //lanzar  progress
-        progress.tween(0,0);
-
-        let contador = 0;
-
-        setInterval(() =>{
-
-            
-                    
-            progress.tween(contador,100);
+        progress.tween(100);
 
 
-            if(contador >= 99){
 
-                contador = 0;
-            }
+        
+        var progress2 = new jprogress("#ProgressBar2","%");
 
 
-            contador++;
 
-        },100);
+        // timepo de animacion
+        progress2.setTimeTween(30);
+
+        // angulo de incio
+        progress2.setAngle(180);
+
+        // agrega color
+        progress2.setColors("rgba(255,0,0,1)","rgba(150,10,150,1)");
+
+        progress2.setShadowColor("rgba(255,0,100,1)");
+
+        progress2.setShadowBlur(100);
+    
+        //lanzar  progress
+        progress2.tween(100);
+
+
+
+
+
         
 
     </script>

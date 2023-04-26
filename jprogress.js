@@ -2,17 +2,21 @@
     //estructurar todo el codigo en una clase
     class jprogress{
         
-        constructor(context,canvas,label){
+        constructor(context,signo){
 
+
+
+            this.signo =  signo;
 
             //crear el contexto
-            this.contente = document.querySelector(context);
+            this.contente = $(context)[0];
+
+
+            this.contente.style.position = "relative";
 
             //create canvas en contente
            // this.canvas = document.querySelector(canvas);
 
-            //create label en contente
-            this.label = document.querySelector(label);
 
 
             //si no exite contexto ignorar canvas y label y crar un contexto en body
@@ -27,8 +31,9 @@
                 //crear label
 
             
-                this.label = document.createElement("label");
-                this.contente.appendChild(this.label);
+                this.label = $("<label></label>")[0]
+
+   
 
                 //label 50% 50%
                 this.label.style.position = "absolute";
@@ -46,6 +51,8 @@
                 //color
                 this.label.style.color = "white";
 
+                
+                $(context).append(this.label);
             }
 
 
@@ -54,8 +61,9 @@
 
             //create canvas en contente
             this.canvas = document.createElement("canvas");
+
             this.contente.appendChild(this.canvas);
-        
+
             this.ctx = this.canvas.getContext("2d");
 
             
@@ -157,6 +165,16 @@
         drawCircle(porcentaje,angleObjet){
 
 
+            if(porcentaje < 0){
+                porcentaje  = 0;
+            }
+
+
+            if(porcentaje >= 100){
+                porcentaje = 100;
+            }
+
+
   
             //convertir el porcentaje a angulo
 
@@ -182,8 +200,17 @@
             
 
             porcentaje = Math.round(porcentaje);
+
+            if( this.signo != ""){
+                
+            }else{
+                this.signo = "%";
+            }
+
+          
+
             //ContentProgressLabel
-            this.label.innerHTML = porcentaje + "%";
+            this.label.innerHTML = porcentaje + this.signo;
 
             this.temPorcentaje = porcentaje;
             
@@ -191,7 +218,10 @@
 
 
 
-        tween(final,time){
+        tween(final){
+
+
+            final =  Math.floor(final);
 
             //actual position
 
