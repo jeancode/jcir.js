@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jprogress</title>
+    <script src="./jprogress.js"></script>
+    <style>
+
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #Contenido{
+
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #ProgressBar{
+            width: 300px;
+            height: 300px;
+            border:1px solid white;
+
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div id="Contenido">
+
+
+        <div id="ProgressBar"></div>
+
+
+    </div>
+
+    <script>    
+
+
+
+        var progress = new jprogress("#ProgressBar");
+
+
+
+        // timepo de animacion
+        progress.setTimeTween(1);
+
+        // angulo de incio
+        progress.setAngle(180);
+
+        // agrega color
+        progress.setColors("rgba(0,255,0,1)","rgba(0,0,255,1)");
+
+        progress.setShadowColor("rgba(0,200,100,1)");
+
+        progress.setShadowBlur(100);
+    
+        //lanzar  progress
+        progress.tween(0,0);
+
+        let contador = 0;
+
+        setInterval(() =>{
+
+            
+                    
+            progress.tween(contador,100);
+
+
+            if(contador >= 99){
+
+                contador = 0;
+            }
+
+
+            contador++;
+
+        },100);
+        
+
+    </script>
+
+    
+</body>
+</html>
